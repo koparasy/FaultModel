@@ -24,6 +24,9 @@ int read_n_objects(int, char*, int, int, float**);
 
 int check_repeated_clusters(int, int, float**);
 
+
+
+
 double  wtime(void);
 
 extern int _debug;

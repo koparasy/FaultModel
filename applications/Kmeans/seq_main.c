@@ -29,6 +29,15 @@
 int      _debug;
 #include "kmeans.h"
 
+int seq_kmeans(float **objects,      /* in: [numObjs][numCoords] */
+               int     numCoords,    /* no. features */
+               int     numObjs,      /* no. objects */
+               int     numClusters,  /* no. clusters */
+               float   threshold,    /* % objects change membership */
+               int    *membership,   /* out: [numObjs] */
+               float **clusters);     /* out: [numClusters][numCoords] *
+
+
 /*---< usage() >------------------------------------------------------------*/
 static void usage(char *argv0, float threshold) {
     char *help =
@@ -168,8 +177,7 @@ int main(int argc, char **argv) {
     membership = (int*) malloc(numObjs * sizeof(int));
     assert(membership != NULL);
 
-    seq_kmeans(objects, numCoords, numObjs, numClusters, threshold, membership,
-               clusters);
+    seq_kmeans(objects, numCoords, numObjs, numClusters, threshold, membership, clusters);
 
     free(objects[0]);
     free(objects);
