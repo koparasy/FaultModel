@@ -209,7 +209,7 @@ int main (int argc, char **argv)
 
     if (argc != 3)
     {
-        printf("Usage:\n\t%s <nthreads> <inputFile> <outputFile>\n", argv[0]);
+        printf("Usage:\n\t%s <inputFile> <outputFile>\n", argv[0]);
         exit(1);
     }
     char *inputFile = argv[1];
