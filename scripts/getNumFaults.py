@@ -99,7 +99,6 @@ def getFaults(faultFile,nBRAMS, sBRAM,numFaults,outDir):
                 
                 if (faults != 0):
                     writeFaultLine(faultDesc,outDir + "/BRAM_"+str(i)+".txt") 
-                if ( faults != 0): 
                     numFaults.append(np.float64(faults))                    
 
 def getNumFaults(nBRAMS, sBRAM, pathToFiles,outDir):
@@ -138,5 +137,5 @@ if __name__ == "__main__":
     numberOfFaults,maxFaults = getNumFaults(numberBRAMS,sizeBRAM,pathToFaults,outDir)
 
     for l in sorted(numberOfFaults):
-        print l, "AVG : ", np.average(numberOfFaults[l]), "STD : ", np.std(numberOfFaults[l])
+        print l, "AVG : ", np.average(numberOfFaults[l]), "STD : ", np.std(numberOfFaults[l]) , "MIN : " , np.min(numberOfFaults[l]), "MAX: " , np.max(numberOfFaults[l]), "Total :", np.sum(numberOfFaults[l])
 
