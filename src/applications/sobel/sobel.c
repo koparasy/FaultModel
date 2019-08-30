@@ -6,6 +6,7 @@
 #include <errno.h>
 
 #ifdef FI 
+#warning I am in here
 #include <m5ops.h>
 #endif
 
@@ -125,6 +126,7 @@ int main(int argc, char* argv[])
 #ifdef FI
    fi_activate(0,STOP);
 #endif
+
   size = fwrite(output, sizeof(unsigned char), SIZE * SIZE, f_out);
   if ( size != SIZE * SIZE ){
       printf("Could not write entire file ... exit\n");

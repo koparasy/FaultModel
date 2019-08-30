@@ -17,10 +17,10 @@
 all: seq quality 
 
 CC             = gcc
-
+LIBS=../../lib/m5op_x86.o ../../lib/m5_mmap.o
 INCFLAGS    = -I.
 OPTFLAGS    = -O3 
-CFLAGS      = $(OPTFLAGS) $(DFLAGS) $(INCFLAGS)
+CFLAGS      = --static $(OPTFLAGS) $(DFLAGS) $(INCFLAGS) -DFI
 H_FILES     = kmeans.h
 COMM_SRC = file_io.c util.c
 SEQ_SRC     = seq_main.c   \
@@ -46,7 +46,7 @@ compare.o: compare.c
 
 seq: seq_main
 seq_main: $(SEQ_OBJ) $(H_FILES)
-	$(CC) $(LDFLAGS) -o $@ $(SEQ_OBJ) $(LIBS)
+	$(CC) --static $(LDFLAGS) -o $@ $(SEQ_OBJ) $(LIBS)
 
 quality: compare
 compare: $(COMPARE_OBJ) $(H_FILES) 
