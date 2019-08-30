@@ -1,0 +1,240 @@
+In archive libm5.a:
+
+m5op_x86.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <m5_arm>:
+   0:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+   7:	00 
+   8:	48 c7 c0 00 00 00 00 	mov    $0x0,%rax
+   f:	48 c1 e0 08          	shl    $0x8,%rax
+  13:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  17:	c3                   	retq   
+
+0000000000000018 <m5_quiesce>:
+  18:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  1f:	00 
+  20:	48 c7 c0 01 00 00 00 	mov    $0x1,%rax
+  27:	48 c1 e0 08          	shl    $0x8,%rax
+  2b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  2f:	c3                   	retq   
+
+0000000000000030 <m5_quiesce_ns>:
+  30:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  37:	00 
+  38:	48 c7 c0 02 00 00 00 	mov    $0x2,%rax
+  3f:	48 c1 e0 08          	shl    $0x8,%rax
+  43:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  47:	c3                   	retq   
+
+0000000000000048 <m5_quiesce_cycle>:
+  48:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  4f:	00 
+  50:	48 c7 c0 03 00 00 00 	mov    $0x3,%rax
+  57:	48 c1 e0 08          	shl    $0x8,%rax
+  5b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  5f:	c3                   	retq   
+
+0000000000000060 <m5_quiesce_time>:
+  60:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  67:	00 
+  68:	48 c7 c0 04 00 00 00 	mov    $0x4,%rax
+  6f:	48 c1 e0 08          	shl    $0x8,%rax
+  73:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  77:	c3                   	retq   
+
+0000000000000078 <m5_rpns>:
+  78:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  7f:	00 
+  80:	48 c7 c0 07 00 00 00 	mov    $0x7,%rax
+  87:	48 c1 e0 08          	shl    $0x8,%rax
+  8b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  8f:	c3                   	retq   
+
+0000000000000090 <m5_wake_cpu>:
+  90:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  97:	00 
+  98:	48 c7 c0 09 00 00 00 	mov    $0x9,%rax
+  9f:	48 c1 e0 08          	shl    $0x8,%rax
+  a3:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  a7:	c3                   	retq   
+
+00000000000000a8 <m5_exit>:
+  a8:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  af:	00 
+  b0:	48 c7 c0 21 00 00 00 	mov    $0x21,%rax
+  b7:	48 c1 e0 08          	shl    $0x8,%rax
+  bb:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  bf:	c3                   	retq   
+
+00000000000000c0 <m5_fail>:
+  c0:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  c7:	00 
+  c8:	48 c7 c0 22 00 00 00 	mov    $0x22,%rax
+  cf:	48 c1 e0 08          	shl    $0x8,%rax
+  d3:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  d7:	c3                   	retq   
+
+00000000000000d8 <m5_init_param>:
+  d8:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  df:	00 
+  e0:	48 c7 c0 30 00 00 00 	mov    $0x30,%rax
+  e7:	48 c1 e0 08          	shl    $0x8,%rax
+  eb:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+  ef:	c3                   	retq   
+
+00000000000000f0 <m5_load_symbol>:
+  f0:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+  f7:	00 
+  f8:	48 c7 c0 31 00 00 00 	mov    $0x31,%rax
+  ff:	48 c1 e0 08          	shl    $0x8,%rax
+ 103:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 107:	c3                   	retq   
+
+0000000000000108 <m5_reset_stats>:
+ 108:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 10f:	00 
+ 110:	48 c7 c0 40 00 00 00 	mov    $0x40,%rax
+ 117:	48 c1 e0 08          	shl    $0x8,%rax
+ 11b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 11f:	c3                   	retq   
+
+0000000000000120 <m5_dump_stats>:
+ 120:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 127:	00 
+ 128:	48 c7 c0 41 00 00 00 	mov    $0x41,%rax
+ 12f:	48 c1 e0 08          	shl    $0x8,%rax
+ 133:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 137:	c3                   	retq   
+
+0000000000000138 <m5_dump_reset_stats>:
+ 138:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 13f:	00 
+ 140:	48 c7 c0 42 00 00 00 	mov    $0x42,%rax
+ 147:	48 c1 e0 08          	shl    $0x8,%rax
+ 14b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 14f:	c3                   	retq   
+
+0000000000000150 <m5_checkpoint>:
+ 150:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 157:	00 
+ 158:	48 c7 c0 43 00 00 00 	mov    $0x43,%rax
+ 15f:	48 c1 e0 08          	shl    $0x8,%rax
+ 163:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 167:	c3                   	retq   
+
+0000000000000168 <m5_read_file>:
+ 168:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 16f:	00 
+ 170:	48 c7 c0 50 00 00 00 	mov    $0x50,%rax
+ 177:	48 c1 e0 08          	shl    $0x8,%rax
+ 17b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 17f:	c3                   	retq   
+
+0000000000000180 <m5_write_file>:
+ 180:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 187:	00 
+ 188:	48 c7 c0 4f 00 00 00 	mov    $0x4f,%rax
+ 18f:	48 c1 e0 08          	shl    $0x8,%rax
+ 193:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 197:	c3                   	retq   
+
+0000000000000198 <m5_debug_break>:
+ 198:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 19f:	00 
+ 1a0:	48 c7 c0 51 00 00 00 	mov    $0x51,%rax
+ 1a7:	48 c1 e0 08          	shl    $0x8,%rax
+ 1ab:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 1af:	c3                   	retq   
+
+00000000000001b0 <m5_switch_cpu>:
+ 1b0:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 1b7:	00 
+ 1b8:	48 c7 c0 52 00 00 00 	mov    $0x52,%rax
+ 1bf:	48 c1 e0 08          	shl    $0x8,%rax
+ 1c3:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 1c7:	c3                   	retq   
+
+00000000000001c8 <m5_add_symbol>:
+ 1c8:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 1cf:	00 
+ 1d0:	48 c7 c0 53 00 00 00 	mov    $0x53,%rax
+ 1d7:	48 c1 e0 08          	shl    $0x8,%rax
+ 1db:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 1df:	c3                   	retq   
+
+00000000000001e0 <m5_panic>:
+ 1e0:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 1e7:	00 
+ 1e8:	48 c7 c0 54 00 00 00 	mov    $0x54,%rax
+ 1ef:	48 c1 e0 08          	shl    $0x8,%rax
+ 1f3:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 1f7:	c3                   	retq   
+
+00000000000001f8 <m5_work_begin>:
+ 1f8:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 1ff:	00 
+ 200:	48 c7 c0 5a 00 00 00 	mov    $0x5a,%rax
+ 207:	48 c1 e0 08          	shl    $0x8,%rax
+ 20b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 20f:	c3                   	retq   
+
+0000000000000210 <m5_work_end>:
+ 210:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 217:	00 
+ 218:	48 c7 c0 5b 00 00 00 	mov    $0x5b,%rax
+ 21f:	48 c1 e0 08          	shl    $0x8,%rax
+ 223:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 227:	c3                   	retq   
+
+0000000000000228 <m5_dist_toggle_sync>:
+ 228:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 22f:	00 
+ 230:	48 c7 c0 62 00 00 00 	mov    $0x62,%rax
+ 237:	48 c1 e0 08          	shl    $0x8,%rax
+ 23b:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 23f:	c3                   	retq   
+
+0000000000000240 <fi_activate>:
+ 240:	4c 8b 1c 25 00 00 00 	mov    0x0,%r11
+ 247:	00 
+ 248:	48 c7 c0 57 00 00 00 	mov    $0x57,%rax
+ 24f:	48 c1 e0 08          	shl    $0x8,%rax
+ 253:	49 8b 04 03          	mov    (%r11,%rax,1),%rax
+ 257:	c3                   	retq   
+
+m5_mmap.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000000 <map_m5_mem>:
+   0:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 7 <map_m5_mem+0x7>
+   7:	48 83 ec 08          	sub    $0x8,%rsp
+   b:	31 c0                	xor    %eax,%eax
+   d:	be 02 10 10 00       	mov    $0x101002,%esi
+  12:	e8 00 00 00 00       	callq  17 <map_m5_mem+0x17>
+  17:	83 f8 ff             	cmp    $0xffffffff,%eax
+  1a:	74 30                	je     4c <map_m5_mem+0x4c>
+  1c:	31 ff                	xor    %edi,%edi
+  1e:	41 89 c0             	mov    %eax,%r8d
+  21:	41 b9 00 00 ff ff    	mov    $0xffff0000,%r9d
+  27:	b9 01 00 00 00       	mov    $0x1,%ecx
+  2c:	ba 03 00 00 00       	mov    $0x3,%edx
+  31:	be 00 00 01 00       	mov    $0x10000,%esi
+  36:	e8 00 00 00 00       	callq  3b <map_m5_mem+0x3b>
+  3b:	48 85 c0             	test   %rax,%rax
+  3e:	48 89 05 00 00 00 00 	mov    %rax,0x0(%rip)        # 45 <map_m5_mem+0x45>
+  45:	74 1b                	je     62 <map_m5_mem+0x62>
+  47:	48 83 c4 08          	add    $0x8,%rsp
+  4b:	c3                   	retq   
+  4c:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 53 <map_m5_mem+0x53>
+  53:	e8 00 00 00 00       	callq  58 <map_m5_mem+0x58>
+  58:	bf 01 00 00 00       	mov    $0x1,%edi
+  5d:	e8 00 00 00 00       	callq  62 <map_m5_mem+0x62>
+  62:	48 8d 3d 00 00 00 00 	lea    0x0(%rip),%rdi        # 69 <map_m5_mem+0x69>
+  69:	e8 00 00 00 00       	callq  6e <map_m5_mem+0x6e>
+  6e:	bf 01 00 00 00       	mov    $0x1,%edi
+  73:	e8 00 00 00 00       	callq  78 <.LC2+0x5b>

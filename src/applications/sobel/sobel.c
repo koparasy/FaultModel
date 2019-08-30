@@ -5,8 +5,8 @@
 #include <time.h>
 #include <errno.h>
 
-#ifdef GEMFI
-#include <m5op.h>
+#ifdef FI 
+#include <m5ops.h>
 #endif
 
 #define SIZE	512
@@ -116,8 +116,15 @@ int main(int argc, char* argv[])
       exit(-1);
   }
   fclose(f_in);
+#ifdef FI
+    fi_activate(0,START);
+#endif
 
   sobel(input, output );
+
+#ifdef FI
+   fi_activate(0,STOP);
+#endif
   size = fwrite(output, sizeof(unsigned char), SIZE * SIZE, f_out);
   if ( size != SIZE * SIZE ){
       printf("Could not write entire file ... exit\n");
