@@ -31,7 +31,7 @@ CC=gcc
 AS=as
 LD=ld
 
-CFLAGS?=-O2 -DM5OP_ADDR=0xFFFF0000 -I./
+CFLAGS?=-O2 --static -I./
 LUA_HEADER_INCLUDE=$(shell pkg-config --cflags-only-I lua51)
 LUA_OBJS=lua_gem5Op.opic m5op_x86.opic m5_mmap.opic
 LIB_OBJS=m5op_x86.o m5_mmap.o
@@ -39,10 +39,10 @@ LIB_OBJS=m5op_x86.o m5_mmap.o
 all: libm5
 
 %.o: %.S
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS)  -o $@ -c -fPIC $<
 
 %.o: %.c
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) $(CFLAGS) -fPIC -o $@ -c $<
 
 %.opic : %.S
 	$(CC) $(CFLAGS) -fPIC -o $@ -c $<

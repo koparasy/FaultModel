@@ -117,6 +117,9 @@ int main(int argc, char* argv[])
       exit(-1);
   }
   fclose(f_in);
+#ifdef FI
+   fi_activate(0,START);
+#endif
 
   sobel(input, output );
 
