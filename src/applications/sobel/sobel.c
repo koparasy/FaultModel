@@ -5,8 +5,8 @@
 #include <time.h>
 #include <errno.h>
 
-#ifdef FI 
-#include <m5ops.h>
+#ifdef GEMFI
+#include <m5op.h>
 #endif
 
 #define SIZE	512
@@ -83,6 +83,7 @@ int main(int argc, char* argv[])
 
   if ( argc != 3 ){
       printf("%s 'input file' 'output file'\n",argv[0]);
+      printf("Error");
       exit(-1);
   }
   char *inputFile = argv[1];
@@ -97,37 +98,30 @@ int main(int argc, char* argv[])
 
   f_in = fopen(inputFile, "r");
   if (f_in == NULL) {
-    printf("File %s  not found\n", inputFile);
+    printf("Error:File %s not found\n", inputFile);
     exit(1);
   }
 
   f_out = fopen(outputFile, "wb");
   if (f_out == NULL) {
-    printf("File %s could not be created\n", outputFile);
+    printf("Error:File %s could not be created\n", outputFile);
     fclose(f_in);
     exit(1);
   }  
 
   int size = fread(input, sizeof(unsigned char), SIZE*SIZE, f_in);
   if ( size != SIZE * SIZE ){
-      printf("Could not read entire file ... exit\n");
+      printf("Error:Could not read entire file ... exit\n");
       fclose(f_in);
       fclose(f_out);
       exit(-1);
   }
   fclose(f_in);
-#ifdef FI
-    fi_activate(0,START);
-#endif
 
   sobel(input, output );
-
-#ifdef FI
-   fi_activate(0,STOP);
-#endif
   size = fwrite(output, sizeof(unsigned char), SIZE * SIZE, f_out);
   if ( size != SIZE * SIZE ){
-      printf("Could not write entire file ... exit\n");
+      printf("Error:Could not write entire file ... exit\n");
       fclose(f_in);
       fclose(f_out);
       exit(-1);
