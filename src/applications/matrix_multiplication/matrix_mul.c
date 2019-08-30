@@ -2,6 +2,10 @@
 #include <stdlib.h>
   
 #define N 64 
+#ifdef FI 
+#include <m5ops.h>
+#endif
+
 
 void multiply(int matrix1[][N], int matrix2[][N], int result[][N]) 
 { 
@@ -42,9 +46,18 @@ int main(int argc, char **argv)
             matrix2[i][j] = i+1;
         }
     }
-  
+
+#ifdef FI
+   fi_activate(0,START);
+#endif
+
+
     multiply(matrix1, matrix2, result); 
-  
+ #ifdef FI
+   fi_activate(0,STOP);
+#endif
+
+ 
     for (i = 0; i < N; i++) 
     { 
         for (j = 0; j < N; j++) {

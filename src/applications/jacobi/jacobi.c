@@ -4,6 +4,9 @@
 #include <math.h>
 #include <sys/time.h>
 
+#ifdef FI 
+#include <m5ops.h>
+#endif
 
 
 double *construct_jacobi_matrix(int diagonally_dominant, int size);
@@ -196,7 +199,16 @@ int main(int argc, char* argv[]) {
     mat = construct_jacobi_matrix(diagonally_dominant, N);
     b = construct_right(N, mat, y);
 
+#ifdef FI
+   fi_activate(0,START);
+#endif
+
+
     diff = jacobi(mat, x, x1, b, y, N, itol, &iters);
+
+#ifdef FI
+   fi_activate(0,STOP);
+#endif
 
     printf("Converged after %d iterations, solution: %g\n", iters,diff);
 

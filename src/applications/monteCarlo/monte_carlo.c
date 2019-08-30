@@ -5,6 +5,12 @@
 #include <sys/time.h>
 #include <stdlib.h>
 
+
+#ifdef FI 
+#include <m5ops.h>
+#endif
+
+
 double rand_uniform() {
 	double r = rand()/(double)RAND_MAX;
 	return r;
@@ -200,10 +206,17 @@ int main(int argc, char* argv[])
 	// execute for all points
 	dur = my_time();
 
+#ifdef FI
+   fi_activate(0,START);
+#endif
 	for (i=0; i<nodes; ++i)
 	{
 		random_walks_from_point(D, points+2*i, estimation+i, walks, btol, tasks);
 	}
+#ifdef FI
+   fi_activate(0,STOP);
+#endif
+
 	dur = my_time() - dur;
 	printf("Duration: %ld\n", dur);
 	fwrite(&nodes, sizeof(long), 1, out);
