@@ -1,6 +1,3 @@
 [submodule "FPGA-BRAMs-Undervoltig-Study"]
 	path = FPGA-BRAMs-Undervoltig-Study
 	url = https://github.com/behzadsalami/FPGA-BRAMs-Undervoltig-Study.git
-[submodule "gem5"]
-	path = gem5
-	url = https://github.com/mabdullahsoyturk/gem5.git
