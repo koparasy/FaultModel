@@ -66,19 +66,20 @@ bitLocations[''] = []
 
 
 def createFaults(counter, value):
+    faultType = 0
     BytesRead = int(counter/8)
     cacheLine = int ( BytesRead/64 )
     ByteOffset = int ( BytesRead % 64 )
     BitOffset = (counter%8)
     faults = []
     for i in bitLocations[value]:
-        faults.append((str(cacheLine), str(ByteOffset), str(BitOffset+i)))
+        faults.append((str(faultType), str(cacheLine), str(ByteOffset), str(BitOffset+i)))
     return faults        
 
 def writeFaultLine( desc, fileName):
     FI_FILE= open(fileName, "w")
     for l in desc:
-        FI_FILE.write('%s %s %s l1d\n' % l)
+        FI_FILE.write('%s %s %s %s l1d\n' % l)
     FI_FILE.close()        
         
 
